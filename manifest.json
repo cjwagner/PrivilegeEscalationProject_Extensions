@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+
+  "name": "Extension 1",
+  "description": "This extension adds a button that deletes all history for the current site. A small banner badge indicates success. Due to a bug in chrome's api, history sync must be turned off.",
+  "version": "1.0",
+
+  "icons" : {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+    },
+
+  "browser_action": {
+   "default_icon": {
+      "19": "icon.png",
+      "38": "iconBig.png"}//,
+   //"default_popup": "popup.html"
+  },
+  "background": {
+    "page": "background.html"
+    //"scripts": ["background.js"]
+  },
+  "permissions": [
+   "activeTab",
+   "history",
+   "storage"
+   ]
+}
