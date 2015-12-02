@@ -41,7 +41,7 @@ function saveLastStartUpCallback(lastStart){
             subData.visitCount = h.visitCount;
             subData.typedCount = h.typedCount;
 
-            data.date = h.lastVisitTime;
+            data.date = Math.round(Number(h.lastVisitTime));
             data.url = h.url;
             data.loggedInputs = subData;
 
@@ -71,4 +71,3 @@ function saveSearchCallback(logDatas) {
         chrome.storage.local.set({'lastStartUp': (new Date()).getTime()});
     }
 }
-
