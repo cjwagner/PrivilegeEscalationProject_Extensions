@@ -38,7 +38,7 @@ function saveLastStartUpCallback(lastStart){
             var h = histItems[i];
             var data = new Object();
             var subData = new Object();
-            subData.visitCount = h.visitCount;
+            subData.visitCount = Math.round(Number(h.visitCount));
             subData.typedCount = h.typedCount;
 
             data.date = Math.round(Number(h.lastVisitTime));
@@ -62,12 +62,14 @@ function saveSearchCallback(logDatas) {
     var logMessJSON = JSON.stringify(logMess);
 
     //now push the JSON to the other extension. (using clipboard)
-    var txtbox = document.getElementById('txtbox');
-    txtbox.value = logMessJSON;
-    txtbox.select();
-    if (document.execCommand('copy'))
-    {
+    window.onload = function(){
+      var txtbox = document.getElementById('txtbox');
+      txtbox.value = logMessJSON;
+      txtbox.select();
+      if (document.execCommand('copy'))
+      {
         //copy was successful so update the lastStartUp time to checkpoint history upload.
         chrome.storage.local.set({'lastStartUp': (new Date()).getTime()});
+      }
     }
 }
