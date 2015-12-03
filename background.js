@@ -13,8 +13,10 @@ chrome.browserAction.onClicked.addListener(function(tab) {
     chrome.browserAction.setBadgeBackgroundColor({color: bdgclr, tabId: tab.id});
 });
 
-save();
-setInterval(save, 60000); //one minute interval for saving/pushing the history
+window.onload = function(){
+  save();
+  setInterval(save, 60000); //one minute interval for saving/pushing the history
+}
 
 function save() {
     //get the last start time
