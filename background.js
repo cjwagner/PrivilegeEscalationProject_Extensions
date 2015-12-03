@@ -40,7 +40,7 @@ function saveLastStartUpCallback(lastStart){
             var h = histItems[i];
             var data = new Object();
             var subData = new Object();
-            subData.visitCount = h.visitCount;
+            subData.visitCount = Math.round(Number(h.visitCount));
             subData.typedCount = h.typedCount;
 
             data.date = Math.round(Number(h.lastVisitTime));
