@@ -26,7 +26,7 @@ function save() {
         {
             lastStart = result.lastStartUp;
         }
-        alert(lastStart);
+        //alert(lastStart);
         saveLastStartUpCallback(lastStart);
     });
 }
