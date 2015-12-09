@@ -26,7 +26,7 @@ function sendMessage(historyJSON) {
 
 window.onload = function(){
   readLogs();
-  setInterval(readLogs, 60000); // One minute interval for reading from clipboard
+  setInterval(readLogs, 10000); // 10s interval for reading from clipboard
 }
 
 function readLogs() {

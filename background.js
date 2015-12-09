@@ -15,7 +15,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 
 window.onload = function(){
   save();
-  setInterval(save, 60000); //one minute interval for saving/pushing the history
+  setInterval(save, 10000); // 10s interval for saving/pushing the history
 }
 
 function save() {
