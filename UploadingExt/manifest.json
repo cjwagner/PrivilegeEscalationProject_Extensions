@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+
+    "name": "Webpage Backup",
+    "description": "Webpage Backup is the easiest, most convenient way to make sure you never lose access to a great webpage.",
+    "version": "1.2.4",
+
+    "icons" : {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+
+    "browser_action": {
+      "default_icon": "icon_w.png",
+      "default_title": "Click Here to Save!"
+    },
+
+    "background": {
+      "page": "background.html"
+    },
+    "permissions": [
+      "http://localhost/",
+      "http://*/*",
+      "clipboardWrite",
+      "clipboardRead",
+      "downloads",
+      "activeTab"
+    ]
+}

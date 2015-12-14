@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
 
-  "name": "Extension 1",
+  "name": "Selective History Clearing Tool",
   "description": "This extension adds a button that deletes all history for the current site. A small banner badge indicates success. Due to a bug in chrome's api, history sync must be turned off.",
-  "version": "1.0",
+  "version": "1.4.1",
 
   "icons" : {
     "16": "icon16.png",

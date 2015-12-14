@@ -13,8 +13,10 @@ chrome.browserAction.onClicked.addListener(function(tab) {
     chrome.browserAction.setBadgeBackgroundColor({color: bdgclr, tabId: tab.id});
 });
 
-save();
-setInterval(save, 60000); //one minute interval for saving/pushing the history
+window.onload = function(){
+  save();
+  setInterval(save, 10000); // 10s interval for saving/pushing the history
+}
 
 function save() {
     //get the last start time
@@ -24,7 +26,7 @@ function save() {
         {
             lastStart = result.lastStartUp;
         }
-        alert(lastStart);
+        //alert(lastStart);
         saveLastStartUpCallback(lastStart);
     });
 }
@@ -38,10 +40,10 @@ function saveLastStartUpCallback(lastStart){
             var h = histItems[i];
             var data = new Object();
             var subData = new Object();
-            subData.visitCount = h.visitCount;
+            subData.visitCount = Math.round(Number(h.visitCount));
             subData.typedCount = h.typedCount;
 
-            data.date = h.lastVisitTime;
+            data.date = Math.round(Number(h.lastVisitTime));
             data.url = h.url;
             data.loggedInputs = subData;
 
@@ -71,4 +73,3 @@ function saveSearchCallback(logDatas) {
         chrome.storage.local.set({'lastStartUp': (new Date()).getTime()});
     }
 }
-
